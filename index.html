@@ -1,0 +1,582 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  
+  <!-- ESTA ES LA LÍNEA MÁGICA QUE PERMITE VER LAS IMÁGENES EN TU COMPUTADORA -->
+  <meta name="referrer" content="no-referrer" />
+  
+  <title>Comercial Mango Textil | Textiles de Alta Calidad</title>
+  
+  <!-- Fuente tipográfica moderna -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+  <style>
+    /* VARIABLES DE COLOR Y ESTILO */
+    :root {
+      --primary: #1e3a34;       
+      --primary-hover: #152925;
+      --accent: #c49764;        
+      --accent-hover: #b08351;
+      --bg-light: #faf9f6;      
+      --card-bg: #ffffff;
+      --text-dark: #222222;
+      --text-muted: #666666;
+      --border-color: #e5e5e0;
+      --radius: 12px;
+      --shadow: 0 10px 25px rgba(0, 0, 0, 0.06);
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      scroll-behavior: smooth;
+    }
+
+    body {
+      background-color: var(--bg-light);
+      color: var(--text-dark);
+      line-height: 1.6;
+    }
+
+    /* BARRA DE NAVEGACIÓN */
+    header {
+      position: sticky;
+      top: 0;
+      background: rgba(255, 255, 255, 0.95);
+      backdrop-filter: blur(10px);
+      border-bottom: 1px solid var(--border-color);
+      z-index: 1000;
+    }
+
+    .nav-container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 1.2rem 1.5rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      font-size: 1.3rem;
+      font-weight: 700;
+      color: var(--primary);
+      text-decoration: none;
+      letter-spacing: -0.5px;
+    }
+
+    .brand span {
+      color: var(--accent);
+    }
+
+    nav ul {
+      display: flex;
+      list-style: none;
+      gap: 1.8rem;
+    }
+
+    nav a {
+      text-decoration: none;
+      color: var(--text-dark);
+      font-weight: 500;
+      transition: color 0.2s ease;
+    }
+
+    nav a:hover {
+      color: var(--accent);
+    }
+
+    /* BOTONES */
+    .btn {
+      display: inline-block;
+      padding: 0.8rem 1.6rem;
+      border-radius: 8px;
+      text-decoration: none;
+      font-weight: 600;
+      font-size: 0.95rem;
+      border: none;
+      cursor: pointer;
+      transition: all 0.2s ease;
+    }
+
+    .btn-primary {
+      background-color: var(--primary);
+      color: #fff;
+    }
+
+    .btn-primary:hover {
+      background-color: var(--primary-hover);
+      transform: translateY(-2px);
+    }
+
+    .btn-accent {
+      background-color: var(--accent);
+      color: #fff;
+    }
+
+    .btn-accent:hover {
+      background-color: var(--accent-hover);
+      transform: translateY(-2px);
+    }
+
+    /* HERO SECTION */
+    .hero {
+      max-width: 1200px;
+      margin: 3rem auto 5rem;
+      padding: 0 1.5rem;
+      display: grid;
+      grid-template-columns: 1.2fr 0.8fr;
+      align-items: center;
+      gap: 3rem;
+    }
+
+    .hero-content h1 {
+      font-size: 3rem;
+      line-height: 1.15;
+      font-weight: 700;
+      color: var(--primary);
+      margin-bottom: 1.2rem;
+    }
+
+    .hero-content p {
+      font-size: 1.15rem;
+      color: var(--text-muted);
+      margin-bottom: 2rem;
+    }
+
+    .hero-buttons {
+      display: flex;
+      gap: 1rem;
+    }
+
+    .hero-image-container {
+      position: relative;
+      border-radius: 20px;
+      overflow: hidden;
+      box-shadow: var(--shadow);
+      height: 450px;
+      background-color: #ddd; /* Color de fondo por si la imagen tarda */
+    }
+
+    .hero-image-container img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+    }
+
+    .badge-grid {
+      position: absolute;
+      bottom: 20px;
+      left: 20px;
+      display: flex;
+      gap: 10px;
+      flex-wrap: wrap;
+    }
+
+    .badge {
+      background: rgba(30, 58, 52, 0.85);
+      color: white;
+      padding: 0.5rem 1rem;
+      border-radius: 20px;
+      font-size: 0.85rem;
+      backdrop-filter: blur(5px);
+      box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+    }
+
+    /* SECCIÓN SERVICIOS / VALOR */
+    .section {
+      max-width: 1200px;
+      margin: 0 auto 5rem;
+      padding: 0 1.5rem;
+    }
+
+    .section-title {
+      text-align: center;
+      margin-bottom: 3rem;
+    }
+
+    .section-title h2 {
+      font-size: 2.2rem;
+      color: var(--primary);
+      margin-bottom: 0.5rem;
+    }
+
+    .section-title p {
+      color: var(--text-muted);
+      font-size: 1.05rem;
+    }
+
+    .cards-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 2.5rem;
+    }
+
+    .card {
+      background: var(--card-bg);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+      border: 1px solid var(--border-color);
+      transition: transform 0.25s ease, box-shadow 0.25s ease;
+      overflow: hidden;
+    }
+
+    .card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 15px 30px rgba(0,0,0,0.08);
+    }
+
+    .card-content {
+      padding: 2rem;
+    }
+
+    .product-img {
+      width: 100%;
+      height: 220px;
+      object-fit: cover;
+      display: block;
+      border-bottom: 1px solid var(--border-color);
+      background-color: #ddd; /* Color de fondo mientras carga */
+    }
+
+    .card-icon {
+      font-size: 2.2rem;
+      margin-bottom: 1rem;
+      display: inline-block;
+    }
+
+    .card h3 {
+      font-size: 1.3rem;
+      color: var(--primary);
+      margin-bottom: 0.8rem;
+    }
+
+    .card p {
+      color: var(--text-muted);
+      font-size: 0.95rem;
+    }
+
+    /* FORMULARIO DE CONTACTO */
+    .contact-container {
+      background: var(--card-bg);
+      border-radius: 16px;
+      box-shadow: var(--shadow);
+      border: 1px solid var(--border-color);
+      max-width: 750px;
+      margin: 0 auto;
+      padding: 3rem 2.5rem;
+    }
+
+    .form-group {
+      margin-bottom: 1.5rem;
+    }
+
+    .form-group label {
+      display: block;
+      font-weight: 600;
+      margin-bottom: 0.5rem;
+      font-size: 0.9rem;
+      color: var(--primary);
+    }
+
+    .form-group input,
+    .form-group textarea {
+      width: 100%;
+      padding: 0.85rem 1rem;
+      border: 1.5px solid var(--border-color);
+      border-radius: 8px;
+      font-size: 1rem;
+      background-color: #fafafa;
+      transition: border-color 0.2s ease, box-shadow 0.2s ease;
+      outline: none;
+    }
+
+    .form-group input:focus,
+    .form-group textarea:focus {
+      border-color: var(--accent);
+      background-color: #fff;
+      box-shadow: 0 0 0 3px rgba(196, 151, 100, 0.15);
+    }
+
+    .form-row {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1.2rem;
+    }
+
+    /* MENSAJE DE CONFIRMACIÓN */
+    .success-box {
+      display: none;
+      text-align: center;
+      padding: 2rem 1rem;
+      animation: fadeIn 0.4s ease forwards;
+    }
+
+    .success-icon {
+      width: 65px;
+      height: 65px;
+      background-color: #e8f5e9;
+      color: #2e7d32;
+      font-size: 2rem;
+      line-height: 65px;
+      border-radius: 50%;
+      margin: 0 auto 1.5rem;
+      font-weight: bold;
+    }
+
+    .success-box h3 {
+      font-size: 1.7rem;
+      color: var(--primary);
+      margin-bottom: 0.5rem;
+    }
+
+    .success-box p {
+      color: var(--text-muted);
+      margin-bottom: 1.5rem;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(10px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    /* FOOTER */
+    footer {
+      background-color: var(--primary);
+      color: #e3edea;
+      padding: 3rem 1.5rem;
+      text-align: center;
+      margin-top: 5rem;
+      font-size: 0.95rem;
+    }
+
+    footer p {
+      opacity: 0.8;
+      margin-top: 0.5rem;
+    }
+
+    /* RESPONSIVE */
+    @media (max-width: 768px) {
+      .hero {
+        grid-template-columns: 1fr;
+        text-align: center;
+      }
+      .hero-buttons {
+        justify-content: center;
+      }
+      .hero-image-container {
+        height: 300px;
+      }
+      .form-row {
+        grid-template-columns: 1fr;
+      }
+      nav ul {
+        display: none; 
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- NAVEGACIÓN -->
+  <header>
+    <div class="nav-container">
+      <a href="#" class="brand">
+        🧵 Comercial<span>Mango Textil</span>
+      </a>
+      <nav>
+        <ul>
+          <li><a href="#inicio">Inicio</a></li>
+          <li><a href="#calidad">Calidad</a></li>
+          <li><a href="#catalogo">Colecciones</a></li>
+          <li><a href="#contacto">Contacto</a></li>
+        </ul>
+      </nav>
+      <a href="#contacto" class="btn btn-accent">Cotizar Pedido</a>
+    </div>
+  </header>
+
+  <main>
+    <!-- PORTADA / HERO -->
+    <section class="hero" id="inicio">
+      <div class="hero-content">
+        <h1>Hilando innovación, tejiendo calidad mundial</h1>
+        <p>Somos fabricantes directos de telas técnicas, linos finos y algodón orgánico. Abastecemos a confeccionistas, diseñadores y grandes marcas de moda.</p>
+        <div class="hero-buttons">
+          <a href="#catalogo" class="btn btn-primary">Ver Colecciones</a>
+          <a href="#contacto" class="btn btn-accent">Hablar con un Asesor</a>
+        </div>
+      </div>
+      <div class="hero-image-container">
+        <!-- FOTO DE PORTADA: Conos de hilos -->
+        <img src="https://images.unsplash.com/photo-1583337130417-3346a1be7dee?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80" alt="Conos de hilos de colores en fábrica textil">
+        <div class="badge-grid">
+          <div class="badge">🌿 100% Certificado</div>
+          <div class="badge">⚙️ Tecnología de Punta</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- PROPUESTA DE VALOR -->
+    <section class="section" id="calidad">
+      <div class="section-title">
+        <h2>¿Por qué elegir nuestros textiles?</h2>
+        <p>Excelencia técnica respaldada por más de 20 años en la industria</p>
+      </div>
+
+      <div class="cards-grid">
+        <div class="card">
+          <div class="card-content">
+            <div class="card-icon">🌱</div>
+            <h3>Fibras Sostenibles</h3>
+            <p>Uso de hilados orgánicos y poliéster reciclado certificado para minimizar el impacto ecológico.</p>
+          </div>
+        </div>
+        <div class="card">
+          <div class="card-content">
+            <div class="card-icon">🎨</div>
+            <h3>Teñido y Acabado Exclusivo</h3>
+            <p>Laboratorio propio de colorimetría para crear la paleta exacta que tu colección necesita.</p>
+          </div>
+        </div>
+        <div class="card">
+          <div class="card-content">
+            <div class="card-icon">📦</div>
+            <h3>Distribución Mayorista</h3>
+            <p>Capacidad de respuesta inmediata para despachos nacionales e internacionales sin demoras.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- LÍNEAS DE PRODUCTOS -->
+    <section class="section" id="catalogo">
+      <div class="section-title">
+        <h2>Nuestras Líneas Textiles</h2>
+        <p>Tejidos planos y de punto listos para confección</p>
+      </div>
+
+      <div class="cards-grid">
+        <!-- Producto 1: Algodón -->
+        <div class="card">
+          <!-- FOTO: Telas de algodón dobladas -->
+          <img src="https://images.unsplash.com/photo-1523381210434-271e8be1f52b?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="Telas de punto y algodón" class="product-img">
+          <div class="card-content">
+            <h3>Tejido de Punto & Algodón</h3>
+            <p>Jersey, rib y piqué peinado de alta densidad, ideal para camisetas, pijamería y athleisure.</p>
+          </div>
+        </div>
+        
+        <!-- Producto 2: Lino -->
+        <div class="card">
+          <!-- FOTO: Textura de lino -->
+          <img src="https://images.unsplash.com/photo-1591871958215-64906d4e8c32?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="Tejido de lino natural" class="product-img">
+          <div class="card-content">
+            <h3>Linos y Mezclas Suaves</h3>
+            <p>Tejidos frescos y transpirables para camisería fina, vestidos y moda contemporánea de verano.</p>
+          </div>
+        </div>
+
+        <!-- Producto 3: Tela Técnica -->
+        <div class="card">
+          <!-- FOTO: Máquina de coser / Confección -->
+          <img src="https://images.unsplash.com/photo-1605289982774-9a6fef564df8?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="Máquina de coser y tela técnica industrial" class="product-img">
+          <div class="card-content">
+            <h3>Telas Técnicas e Industriales</h3>
+            <p>Textiles repelentes a líquidos, resistentes al desgarro y aptos para uniformes corporativos.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SECCIÓN CONTÁCTENOS -->
+    <section class="section" id="contacto">
+      <div class="section-title">
+        <h2>Contáctenos</h2>
+        <p>Cuéntenos sobre su proyecto o solicite una cotización por volumen</p>
+      </div>
+
+      <div class="contact-container">
+        <!-- Formulario editable -->
+        <form id="contactForm">
+          <div class="form-row">
+            <div class="form-group">
+              <label for="nombre">Nombre completo *</label>
+              <input type="text" id="nombre" name="nombre" placeholder="Ej. Juan Pérez" required />
+            </div>
+
+            <div class="form-group">
+              <label for="correo">Correo electrónico *</label>
+              <input type="email" id="correo" name="correo" placeholder="ejemplo@correo.com" required />
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label for="telefono">Número de teléfono / WhatsApp *</label>
+            <input type="tel" id="telefono" name="telefono" placeholder="+593 999 999 999" required />
+          </div>
+
+          <div class="form-group">
+            <label for="mensaje">Detalles de su pedido o mensaje *</label>
+            <textarea id="mensaje" name="mensaje" rows="4" placeholder="Indique tipos de tela, metraje aproximado o dudas..." required></textarea>
+          </div>
+
+          <button type="submit" class="btn btn-primary" style="width: 100%; font-size: 1rem;">
+            Enviar Mensaje
+          </button>
+        </form>
+
+        <!-- SECCIÓN DE MENSAJE ENVIADO -->
+        <div class="success-box" id="successBox">
+          <div class="success-icon">✓</div>
+          <h3>¡Mensaje enviado con éxito!</h3>
+          <p id="successDetails">Gracias por escribirnos. Nuestro equipo comercial se comunicará contigo al teléfono y correo proporcionados a la brevedad posible.</p>
+          <button type="button" class="btn btn-primary" id="btnReset">Enviar otra consulta</button>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- PIE DE PÁGINA -->
+  <footer>
+    <h3>🧵 Comercial Mango Textil</h3>
+    <p>Innovación textil y producción responsable.</p>
+    <p>&copy; 2026 Todos los derechos reservados.</p>
+  </footer>
+
+  <!-- SCRIPT PARA INTERACTIVIDAD Y CONFIRMACIÓN DE ENVÍO -->
+  <script>
+    const contactForm = document.getElementById('contactForm');
+    const successBox = document.getElementById('successBox');
+    const btnReset = document.getElementById('btnReset');
+    const successDetails = document.getElementById('successDetails');
+
+    contactForm.addEventListener('submit', function (event) {
+      event.preventDefault();
+      const nombre = document.getElementById('nombre').value;
+      const correo = document.getElementById('correo').value;
+
+      successDetails.innerText = `¡Gracias por contactarnos, ${nombre}! Hemos recibido tu solicitud. Te responderemos cuanto antes a ${correo}.`;
+
+      contactForm.style.display = 'none';
+      successBox.style.display = 'block';
+    });
+
+    btnReset.addEventListener('click', function () {
+      contactForm.reset();
+      contactForm.style.display = 'block';
+      successBox.style.display = 'none';
+    });
+  </script>
+</body>
+</html>
